@@ -15,25 +15,22 @@ Install 'colorpicker' anywhere (or just run it from where it was compiled).
 
 Usage:
 
-In a terminal do:
-
-$ export NVIM_LISTEN_ADDRESS="/tmp/nvim_listen_address"
-$ nvim somefile.cpp
+$ NVIM_LISTEN_ADDRESS="/tmp/nvim_listen_address" nvim somefile.cpp
 
 Put your cursor on a color that you wish to change and press <F10>
 (or whatever you key you did bind this to, see dot_vim/README.vimrc)
 which will show the syntax group that you need to change (after 'hi').
 
 Then run 'colorpicker [syntax_group]' to edit that syntax group.
-See ~/.vim/colors/cwcolors.vim for possible values of 'syntax_group',
+See ~/.vim/colors/cwcolors.vim for all possible values of 'syntax_group',
 for example 'cStatement', 'cppExceptions', 'cppModifier' etc.
 
 When satisfied *copy* the hex value from the color picker with
 your mouse *before* closing the color picker window, because it
-won't safe it automatically, and edit cwcolors.vim by manually.
+won't safe it automatically, and edit cwcolors.vim manually.
 Test by closing and reopening the .cpp file.
 
-Note that colorpicker only changes the foreground or the background
-color and which is hardcoded in Nvr.cpp. At the time of writing only
+Note that colorpicker only changes the foreground OR the background
+color -- and which -- is hardcoded in Nvr.cpp. At the time of writing only
 "Search" and syntax groups containing the substring "Error" change
 the background color.
