@@ -32,7 +32,7 @@ colors look like. Please read [ColorPicker/README](ColorPicker/README) for
 details.
 
 Finally, it is possible to also highlight your projects
-type, classes, functions, variables etc; provided you
+types, classes, functions, variables etc; provided you
 use `ctags`. Run `gentags` on your tags file to generate
 the highlighting info for your project (normally you
 have to do that every time you regenerate your tags file).
