@@ -4,8 +4,8 @@ True color requires both [neovim](https://neovim.io/) as well as a true color te
 I am using konsole as terminal (`sudo apt install konsole`).
 Google for others if you don't like konsole, there are [a few](http://homeonrails.com/2016/05/truecolor-in-gnome-terminal-tmux-and-neovim/).
 
-Furthermore you need to change your `.vimrc` file (see
-[dot\_vim/README.vimrc](dot_vim/README.vimrc) for details) as well as 
+Furthermore you need to change your `.vimrc` file; see
+[dot\_vim/README.vimrc](dot_vim/README.vimrc) for details.
 
 All of this assumes that your neovim will look in the old
 vim directories for configuration; in order for it to do
