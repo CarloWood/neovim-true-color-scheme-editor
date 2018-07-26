@@ -1,0 +1,87 @@
+#!/usr/bin/perl
+
+use Data::Dumper qw(Dumper);
+
+use strict;
+use warnings;
+
+if ($#ARGV != 0) {
+  print "usage: $0 <tags-file>\n";
+  exit;
+}
+
+my $tags_file = $ARGV[0];
+
+open my $handle, $tags_file or die "Could not open $tags_file: $!";
+
+while (my $line = <$handle>) {
+  chomp $line;
+  last if $line eq "";
+  next if $line =~ /^!/;
+  my @tag = split /\t/, $line, 2;
+  my @file = split /\t\//, $tag[1], 2;
+  my @pattern = split /\/;"\t/, $file[1], 2;
+  my @flags = split /\t/, $pattern[1], 2;
+  next if $flags[0] eq "r";
+  my %info;
+  if (scalar(@flags) eq 2) {
+    $flags[1] = "\t" . $flags[1];
+    my @info = split /\t([a-z]*):/, $flags[1];
+    shift @info;
+    my $count = scalar(@info);
+    if ($count % 2 == 1) {
+      pop @info;
+    }
+    %info = @info;
+  }
+  my $syngroup = "";
+  if ($flags[0] eq "c") {
+    $syngroup = "cwClassTag";
+    if (exists $info{'class'}) {
+      $syngroup = "cwNestedClassTag";
+    }
+  }
+  elsif ($flags[0] eq "d") {
+    $syngroup = "cwMacroTag";
+  }
+  elsif ($flags[0] eq "e") {
+    $syngroup = "cwEnumTag";
+  }
+  elsif ($flags[0] eq "f") {
+    $syngroup = "cwFunctionTag";
+  }
+  elsif ($flags[0] eq "g") {
+    $syngroup = "cwEnumTypeTag";
+  }
+  elsif ($flags[0] eq "m") {
+    $syngroup = "cwMemberTag";
+  }
+  elsif ($flags[0] eq "n") {
+    $syngroup = "cwNamespaceTag";
+  }
+  elsif ($flags[0] eq "s") {
+    $syngroup = "cwStructTag";
+  }
+  elsif ($flags[0] eq "t") {
+    $syngroup = "cwTypedefTag";
+  }
+  elsif ($flags[0] eq "u") {
+    $syngroup = "cwUnionTag";
+  }
+  elsif ($flags[0] eq "v") {
+    $syngroup = "cwVariableTag";
+  }
+  else {
+    print STDERR "Unknown flag $flags[0]!\n";
+  }
+  if ($syngroup ne "") {
+    # Do not generate keywords for things that that we want to have a match for.
+    if (index(" ASSERT Debug DoutFatal DoutEntering Dout assert", " $tag[0] ") == -1) {
+      print "syn keyword $syngroup $tag[0]\n";
+    } else {
+      #print "syn match Debug /$tag[0](/\n";
+    }
+  }
+}
+
+close $handle;

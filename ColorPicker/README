@@ -1,0 +1,25 @@
+To compile:
+
+Edit Nvr.cpp and set NVIM_LISTEN_ADDRESS to whatever
+value you want.
+
+$ qmake
+$ make
+
+Install 'colorpicker' anywhere (or just run it from where it was compiled).
+
+Usage:
+
+In a terminal do:
+
+$ export NVIM_LISTEN_ADDRESS="/tmp/nvim_listen_address"
+$ nvim somefile.cpp
+
+Then run 'colorpicker [syntax_group]' to edit that syntax group.
+See ~/.vim/colors/cwcolors.vim for possible values of 'syntax_group',
+for example 'cStatement', 'cppExceptions', 'cppModifier' etc.
+
+When satisfied *copy* the hex value from the color picker with
+your mouse *before* closing the color picker window, because it
+won't safe it automatically, and edit cwcolors.vim by hand. Test
+by closing and reopening the .cpp file.
