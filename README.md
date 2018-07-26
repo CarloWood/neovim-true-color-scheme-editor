@@ -22,7 +22,7 @@ Next, install the files found in the `dot_vim` directory
 into your ~/.vim directory (please also read the file
 [dot\_vim/after/syntax/cpp/README.tags.vim](dot_vim/after/syntax/cpp/README.tags.vim) this tree).
 
-The new color sheme should now work.
+The new color scheme should now work.
 
 If you want to change a color, edit `cwcolors.vim`. A handy
 way to find out what is a good color for you is to compile
