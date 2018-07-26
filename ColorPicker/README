@@ -35,5 +35,5 @@ Test by closing and reopening the .cpp file.
 
 Note that colorpicker only changes the foreground or the background
 color and which is hardcoded in Nvr.cpp. At the time of writing only
-"Error", "cError", "cSpaceError" and "Search" change the background
-color.
+"Search" and syntax groups containing the substring "Error" change
+the background color.

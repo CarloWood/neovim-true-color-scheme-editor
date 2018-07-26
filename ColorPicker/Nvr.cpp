@@ -19,7 +19,7 @@ void Nvr::update_color(QColor const& color)
   std::stringstream scolor;
   scolor << '#' << std::hex << std::setfill('0') << std::setw(2) << R << std::setw(2) << G << std::setw(2) << B;
   std::string remote_command = ":hi " + m_syntax_group;
-  if (m_syntax_group == "Error" || m_syntax_group == "cError" || m_syntax_group == "cSpaceError" || m_syntax_group == "Search")
+  if (m_syntax_group.find("Error") != std::string::npos || m_syntax_group == "Search")
     remote_command += " guibg=";
   else
     remote_command += " guifg=";
