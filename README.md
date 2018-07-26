@@ -18,7 +18,7 @@ let &packpath = &runtimepath
 source ~/.vimrc
 ```
 
-After this install the files found in the `dot_vim` directory
+Next, install the files found in the `dot_vim` directory
 into your ~/.vim directory (please also read the file
 [dot\_vim/after/syntax/cpp/README.tags.vim](dot_vim/after/syntax/cpp/README.tags.vim) this tree).
 
