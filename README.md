@@ -34,8 +34,8 @@ details.
 Finally, it is possible to also highlight your projects
 types, classes, functions, variables etc; provided you
 use `ctags`. Run `gentags` on your tags file to generate
-the highlighting info for your project (normally you
-have to do that every time you regenerate your tags file).
+the highlighting info for your project (normally you'd
+want to do that every time you regenerate your tags file).
 Please read [gentags/README](gentags/README) for further details.
 
 <img src="/screenshot.png" alt="An example screenshot"/>
