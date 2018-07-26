@@ -1,8 +1,8 @@
 # nvim true-color scheme and editor for C/C++ coders.
 
-True color requires both, [neovim](https://neovim.io/) as well as a true color terminal.
+True color requires both [neovim](https://neovim.io/) as well as a true color terminal.
 I am using konsole as terminal (`sudo apt install konsole`).
-Google for others if don't like konsole, there are [a few](http://homeonrails.com/2016/05/truecolor-in-gnome-terminal-tmux-and-neovim/).
+Google for others if you don't like konsole, there are [a few](http://homeonrails.com/2016/05/truecolor-in-gnome-terminal-tmux-and-neovim/).
 
 Furthermore you need to change your `.vimrc` file (see
 [dot\_vim/README.vimrc](dot_vim/README.vimrc) for details) as well as 
