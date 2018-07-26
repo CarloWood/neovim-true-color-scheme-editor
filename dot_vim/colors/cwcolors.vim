@@ -281,12 +281,12 @@ hi Ignore	        guifg=#1F1F1F guibg=#FF1F1F
 " Error         Any erroneous construct.
 "
 " An error message like, "E163: There is only one file to edit" at the bottom of vim.
-hi Error	        guifg=#FC4234
+hi Error	        guibg=#FC4234
 " "\\\s\+$"
 hi cBadContinuation     guibg=#FC4234
 
 " TODO FIXME XXX
-hi cTodo                guifg=#FC4234 gui=bold
+hi cTodo                guibg=#FC4234 gui=bold
 
 " Various C/C++ errors.
 hi cError               guibg=#FC4234
@@ -323,3 +323,8 @@ hi def link cwClassTag cwStructTag
 hi def link cwNestedClassTag cwClassTag
 hi def link cwFunctionTag cFunction
 hi def link cwMemberTag cwFunctionTag
+
+" ============================================================================
+" Other highlighting that I ran into.
+hi markdownLinkText     guifg=#5353ff gui=underline
+hi def link markdownError Error

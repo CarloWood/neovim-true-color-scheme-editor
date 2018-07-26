@@ -1,11 +1,11 @@
-# nvim true-color sheme and editor for C++.
+# nvim true-color scheme and editor for C/C++ coders.
 
 True color requires both, [neovim](https://neovim.io/) as well as a true color terminal.
 I am using konsole as terminal (`sudo apt install konsole`).
 Google for others if don't like konsole, there are [a few](http://homeonrails.com/2016/05/truecolor-in-gnome-terminal-tmux-and-neovim/).
 
 Furthermore you need to change your `.vimrc` file (see
-[dot_vim/README.vimrc](dot_vim/README.vimrc) for details) as well as 
+[dot\_vim/README.vimrc](dot_vim/README.vimrc) for details) as well as 
 
 All of this assumes that your neovim will look in the old
 vim directories for configuration; in order for it to do
@@ -20,7 +20,7 @@ source ~/.vimrc
 
 After this install the files found in the `dot_vim` directory
 into your ~/.vim directory (please also read the file
-[dot_vim/after/syntax/cpp/README.tags.vim](dot_vim/after/syntax/cpp/README.tags.vim) this tree).
+[dot\_vim/after/syntax/cpp/README.tags.vim](dot_vim/after/syntax/cpp/README.tags.vim) this tree).
 
 The new color sheme should now work.
 
