@@ -7,12 +7,18 @@ syn cluster cwNotInParen contains=@cParenGroup,cCppParen,cErrInBracket,cCppBrack
 syn region cwDebugParen transparent matchgroup=cwDebugParenDelim contains=ALLBUT,@cwNotInParen
 \       start='(' end=')'me=s-1
 
+" Add a syntax group for "Debug( ... );".
+syn region cwDebugMacros transparent matchgroup=cwDebugMacrosDelim contains=cwDebugParen
+\       start="\v\W(Debug|Dout(Fatal|Entering|)|ASSERT|assert|DEBUG_ONLY|COMMA_DEBUG_ONLY|NEW|AllocTag([12]?|_dynamic_description)|ForAllDebug(Channels|Objects))\(@="hs=s+1
+\       start="\v^(Debug|DoutFatal|DoutEntering|Dout|ASSERT|assert|DEBUG_ONLY|COMMA_DEBUG_ONLY|NEW|AllocTag[12]?|AllocTag_dynamic_description|ForAllDebugChannels|ForAllDebugObjects)\(@="
+\       end="\v\);?"
+
 " Define cParen last, so it will overrule the previous one.
 syn clear cParen
 syn region cParen transparent contains=ALLBUT,@cwNotInParen,cwDebugParen
 \       start='(' end=')'
 
-" Redefine cCppParen to also exclude cwDebugParen
+" Redefine cCppParen to also exclude cwDebugParen.
 syn clear cCppParen
 syn region cCppParen transparent contained contains=ALLBUT,@cParenGroup,cErrInBracket,cParen,cwDebugParen,cBracket,cString,@Spell
 \       start='(' skip='\\$' excludenl end=')' end='$'
@@ -22,18 +28,16 @@ syn clear cCppBracket
 syn region cCppBracket transparent contained contains=ALLBUT,@cParenGroup,cErrInParen,cParen,cwDebugParen,cBracket,cString,@Spell
 \       start='\[\|<::\@!' skip='\\$' excludenl end=']\|:>' end='$'
 
-" Add a syntax group for "Debug( ... );".
-syn region cwDebugMacros transparent matchgroup=cwDebugMacrosDelim contains=cwDebugParen
-\       start="\v\W(Debug|Dout(Fatal|Entering|)|ASSERT|assert|DEBUG_ONLY|COMMA_DEBUG_ONLY|NEW|AllocTag([12]?|_dynamic_description)|ForAllDebug(Channels|Objects))\(@="hs=s+1
-\       start="\v^(Debug|DoutFatal|DoutEntering|Dout|ASSERT|assert|DEBUG_ONLY|COMMA_DEBUG_ONLY|NEW|AllocTag[12]?|AllocTag_dynamic_description|ForAllDebugChannels|ForAllDebugObjects)\(@="
-\       end="\v\);?"
 syn keyword cwDebugMacro NAMESPACE_DEBUG_CHANNELS_START
 syn keyword cwDebugMacro NAMESPACE_DEBUG_CHANNELS_END
 syn keyword cwDebugMacro NAMESPACE_DEBUG
 syn keyword cwDebugMacro NAMESPACE_DEBUG_START
 syn keyword cwDebugMacro NAMESPACE_DEBUG_END
 
-syn match cwVoidArgument '(void)' contains=None
+" Add syntax group for "function(void)".
+syn region cwVoidArgumentRegion matchgroup=cwVoidArgument contains=None
+\       start="\w(void)"hs=s+1
+\       end="."he=e-1
 
 hi def link cwDebugMacrosDelim Debug       " Highlight 'Debug' and the close paren of that macro.
 hi def link cwDebugParenDelim Debug        " Highlight the open paren of the Debug macro.
