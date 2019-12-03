@@ -38,6 +38,9 @@ hi cComment             guifg=#6f5674
 hi cCommentL            guifg=#767676 guibg=#1a1a1a
 " Code that is commented out with #if 0 ... #endif.
 hi cCppOutIf2           guifg=#a1a591
+" Doxygen comments.
+hi cDoxygenCommentLead  guifg=#ff78b9
+hi cDoxygenComment      guifg=#dfbccb
 
 " ============================================================================
 " * CONSTANT                                                                 *
