@@ -5,7 +5,7 @@ I am using konsole as terminal (`sudo apt install konsole`).
 Google for others if you don't like konsole, there are [a few](http://homeonrails.com/2016/05/truecolor-in-gnome-terminal-tmux-and-neovim/).
 
 Furthermore you need to change `.config/nvim/init.vim` file (`.vimrc` if you added that to
-your runtimepath); see [dot\_vim/README.vimrc](dot_vim/README.vimrc) for details.
+your runtimepath); see [dot\_vim/README-init.vim](dot_vim/README-init.vim) for details.
 
 Next, install the files found in the `dot_vim` directory
 into your `~/.config/nvim` directory (please also read the file

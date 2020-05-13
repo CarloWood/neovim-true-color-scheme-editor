@@ -265,7 +265,7 @@ hi SpecialComment	guifg=#FFB539 guibg=#FF1F1F
 hi Debug	        guifg=#c23eff
 hi cwDebugLabel         guifg=#db8eff
 
-" Trailing white space (needs "let c_space_errors=1" in .vimrc).
+" Trailing white space (needs "let c_space_errors=1" in .config/nvim/init.vim).
 hi cSpaceError          guibg=#1f0000
 
 " ============================================================================

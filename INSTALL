@@ -2,7 +2,7 @@ You'll have to do that manually.
 Please read the following README files:
 
 README.md
-dot_vim/README.vimrc
+dot_vim/README-init.vim
 dot_vim/after/syntax/cpp/README.tags.vim
 ColorPicker/README
 gentags/README
