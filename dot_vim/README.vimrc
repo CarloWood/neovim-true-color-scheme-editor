@@ -1,4 +1,4 @@
-" Add the following syntax highlighting related configuration to your ~/.vimrc file:
+" Add the following syntax highlighting related configuration to your ~/.config/nvim/init.vim file:
 " The ^[ here is one character that you can type with control-v ESC.
 
 if has('nvim')
