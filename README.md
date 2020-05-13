@@ -5,11 +5,11 @@ I am using konsole as terminal (`sudo apt install konsole`).
 Google for others if you don't like konsole, there are [a few](http://homeonrails.com/2016/05/truecolor-in-gnome-terminal-tmux-and-neovim/).
 
 Furthermore you need to change `.config/nvim/init.vim` file (`.vimrc` if you added that to
-your runtimepath); see [dot\_vim/README-init.vim](dot_vim/README-init.vim) for details.
+your runtimepath); see [dot\_vim/README-init.vim](dot_config_nvim/README-init.vim) for details.
 
-Next, install the files found in the `dot_vim` directory
+Next, install the files found in the `dot_config_nvim` directory
 into your `~/.config/nvim` directory (please also read the file
-[dot\_vim/after/syntax/cpp/README.tags.vim](dot_vim/after/syntax/cpp/README.tags.vim) this tree).
+[dot\_vim/after/syntax/cpp/README.tags.vim](dot_config_nvim/after/syntax/cpp/README.tags.vim) this tree).
 
 The new color scheme should now work.
 
