@@ -58,3 +58,17 @@ hi def link cwDoxyComment            cDoxygenCommentLead    " Highlight doxygen 
 hi def link cwDoxyCommentLead        cDoxygenCommentLead    " Highlight doxygen comments.
 hi def link cwDoxyCommentRegion      cDoxygenComment        " Highlight doxygen comments.
 hi def link cwDoxyCommentBlockRegion cDoxygenComment        " Highlight doxygen comments.
+
+" Add syntax group for vulkan types that are handles.
+
+" The regular expression was generated with:
+" RE=$(egrep '^(VK_DEFINE_NON_DISPATCHABLE_HANDLE|VK_DEFINE_HANDLE)' Vulkan-Hpp/Vulkan-Headers/include/vulkan/vulkan_core.h |
+"     sed -e 's/.*(\([^)]*\)).*/\1/;s/^Vk//' | sort | awk '{ printf("%s|", $0); }' | sed -e 's/^/(/;s/|$/)/')
+"
+" For this to work there should not exist a keyword 'vk'. Aka, no `syn keyword cwNamespaceTag vk`!
+
+syn match cwNameSpaceTag "\v<vk>"
+syn match cwVulkanHandle "\v<vk::(AccelerationStructureKHR|AccelerationStructureNV|Buffer|BufferView|CommandBuffer|CommandPool|CuFunctionNVX|CuModuleNVX|DebugReportCallbackEXT|DebugUtilsMessengerEXT|DeferredOperationKHR|DescriptorPool|DescriptorSet|DescriptorSetLayout|DescriptorUpdateTemplate|Device|DeviceMemory|DisplayKHR|DisplayModeKHR|Event|Fence|Framebuffer|Image|ImageView|IndirectCommandsLayoutNV|Instance|PerformanceConfigurationINTEL|PhysicalDevice|Pipeline|PipelineCache|PipelineLayout|PrivateDataSlotEXT|QueryPool|Queue|RenderPass|Sampler|SamplerYcbcrConversion|Semaphore|ShaderModule|SurfaceKHR|SwapchainKHR|ValidationCacheEXT)>"hs=s+4 contains=cwNamespaceTag
+syn match cwVulkanHandle "\v<Vk(AccelerationStructureKHR|AccelerationStructureNV|Buffer|BufferView|CommandBuffer|CommandPool|CuFunctionNVX|CuModuleNVX|DebugReportCallbackEXT|DebugUtilsMessengerEXT|DeferredOperationKHR|DescriptorPool|DescriptorSet|DescriptorSetLayout|DescriptorUpdateTemplate|Device|DeviceMemory|DisplayKHR|DisplayModeKHR|Event|Fence|Framebuffer|Image|ImageView|IndirectCommandsLayoutNV|Instance|PerformanceConfigurationINTEL|PhysicalDevice|Pipeline|PipelineCache|PipelineLayout|PrivateDataSlotEXT|QueryPool|Queue|RenderPass|Sampler|SamplerYcbcrConversion|Semaphore|ShaderModule|SurfaceKHR|SwapchainKHR|ValidationCacheEXT)>"
+
+hi def link cwVulkanHandle cVulkanHandle                    " Highlight vulkan handle types.

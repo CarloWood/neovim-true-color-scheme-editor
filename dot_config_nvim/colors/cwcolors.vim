@@ -15,7 +15,7 @@ set background=dark
 hi Normal               guifg=#e6e6e6 guibg=#1F1F1F guisp=#1F1F1F gui=NONE
 
 " Matching parenthesis -- because my cursor inverts fore- and background, the
-" forground color needs to be the same as the forground color of Normal,
+" foreground color needs to be the same as the foreground color of Normal,
 " because that is the (background) color of the cursor block.
 " The background color specified here is the background color of the matching
 " parenthesis.
@@ -233,6 +233,9 @@ hi def link cppStructure        cStructure
 "
 " UNUSED???
 hi Typedef	        guifg=#FFEE68 guibg=#FF1F1F
+
+" Vulkan handle types
+hi cVulkanHandle        guifg=#FFB3BE
 
 " ============================================================================
 " * SPECIAL                                                                  *
