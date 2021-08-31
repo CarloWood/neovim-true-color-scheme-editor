@@ -3,8 +3,11 @@
 " A group with things that are normally already excluded from cParen.
 syn cluster cwNotInParen contains=@cParenGroup,cCppParen,cErrInBracket,cCppBracket,@cStringGroup,@Spell
 
+" A group that of things that are contained, but not because they are between parens.
+syn cluster cwNotInParen2 contains=cwDoxyCommentLead
+
 " Create a new cParen syntax group that will have Debug highlighting.
-syn region cwDebugParen transparent matchgroup=cwDebugParenDelim contains=ALLBUT,@cwNotInParen
+syn region cwDebugParen transparent matchgroup=cwDebugParenDelim contains=ALLBUT,@cwNotInParen,@cwNotInParen2
 \       start='(' end=')'me=s-1
 
 " Add a syntax group for "Debug( ... );".
@@ -15,7 +18,7 @@ syn region cwDebugMacros transparent matchgroup=cwDebugMacrosDelim contains=cwDe
 
 " Define cParen last, so it will overrule the previous one.
 syn clear cParen
-syn region cParen transparent contains=ALLBUT,@cwNotInParen,cwDebugParen
+syn region cParen transparent contains=ALLBUT,@cwNotInParen,@cwNotInParen2,cwDebugParen
 \       start='(' end=')'
 
 " Redefine cCppParen to also exclude cwDebugParen.
