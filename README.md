@@ -9,7 +9,7 @@ your runtimepath); see [dot\_config\_nvim/README-init.vim](dot_config_nvim/READM
 
 Next, install the files found in the `dot_config_nvim` directory
 into your `~/.config/nvim` directory (please also read the file
-[dot\_config\_nvim/after/syntax/cpp/README.tags.vim](dot_config_nvim/after/syntax/cpp/README.tags.vim) this tree).
+[dot\_config\_nvim/after/syntax/cpp/README.tags.vim](dot_config_nvim/after/syntax/cpp/README.tags.vim) in this tree).
 
 The new color scheme should now work.
 

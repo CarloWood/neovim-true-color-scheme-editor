@@ -18,7 +18,7 @@ if $REPOBASE != ""
   set tags=$REPOBASE-objdir/tags
 endif
 
-" Bind <F10> to a function that shows the syntax highlighting group under thecursor.
+" Bind <F10> to a function that shows the syntax highlighting group under the cursor.
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
 \       '> trans<' . synIDattr(synID(line("."),col("."),0),"name") .
 \       "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
