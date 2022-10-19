@@ -12,8 +12,8 @@ syn region cwDebugParen transparent matchgroup=cwDebugParenDelim contains=ALLBUT
 
 " Add a syntax group for "Debug( ... );".
 syn region cwDebugMacros transparent matchgroup=cwDebugMacrosDelim contains=cwDebugParen
-\       start="\v\W(Debug|LibcwDebug|Dout(Fatal|Entering|)|LibcwDout(Fatal|)|ASSERT|assert|CWDEBUG_ONLY|COMMA_CWDEBUG_ONLY|NEW|AllocTag([12]?|_dynamic_description)|ForAllDebug(Channels|Objects))\(@="hs=s+1
-\       start="\v^(Debug|LibcwDebug|DoutFatal|DoutEntering|Dout|LibcwDoutFatal|LibcwDout|ASSERT|assert|CWDEBUG_ONLY|COMMA_CWDEBUG_ONLY|NEW|AllocTag[12]?|AllocTag_dynamic_description|ForAllDebugChannels|ForAllDebugObjects)\(@="
+\       start="\v\W(Debug|LibcwDebug|Dout(Fatal|Entering|)|LibcwDout(Fatal|)|ASSERT|assert|DEBUG_ONLY|CWDEBUG_ONLY|COMMA_CWDEBUG_ONLY|NEW|AllocTag([12]?|_dynamic_description)|ForAllDebug(Channels|Objects))\(@="hs=s+1
+\       start="\v^(Debug|LibcwDebug|DoutFatal|DoutEntering|Dout|LibcwDoutFatal|LibcwDout|ASSERT|assert|DEBUG_ONLY|CWDEBUG_ONLY|COMMA_CWDEBUG_ONLY|NEW|AllocTag[12]?|AllocTag_dynamic_description|ForAllDebugChannels|ForAllDebugObjects)\(@="
 \       end="\v\);?"
 
 " Define cParen last, so it will overrule the previous one.

@@ -87,7 +87,9 @@ while (my $line = <$handle>) {
     # Do not generate keywords for things that that we want to have a match for.
     if (index(" ASSERT AllocTag1 AllocTag2 AllocTag AllocTag_dynamic_description DEBUG_ONLY Debug DoutFatal DoutEntering Dout assert ForAllDebugChannels ForAllDebugObjects NAMESPACE_DEBUG_START NAMESPACE_DEBUG_END NAMESPACE_DEBUG NAMESPACE_DEBUG_CHANNELS_START NAMESPACE_DEBUG_CHANNELS_END ", " $tag[0] ") == -1) {
       if (!checkCase($tag[0]) or ($syngroup ne "cwFunctionTag" and $syngroup ne "cwMemberTag")) {
-        print "syn keyword $syngroup $tag[0]\n";
+        if ( length($tag[0]) > 1 and not $tag[0] =~ /\W/ and not $tag[0] =~ /^__/ ) {
+          print "syn keyword $syngroup $tag[0]\n";
+        }
       }
     } else {
       #print "syn match Debug /$tag[0](/\n";
