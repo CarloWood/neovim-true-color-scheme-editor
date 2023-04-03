@@ -277,7 +277,7 @@ hi cSpaceError          guibg=#1f0000
 " Underlined    Text that stands out, HTML links.
 "
 " Unused?
-hi Underlined	        guifg=#FC4234 guibg=#FF1F1F
+hi Underlined	        guifg=#0000EE guibg=#CACACA
 
 " Ignore        Left blank, hidden  hl-Ignore.
 "
