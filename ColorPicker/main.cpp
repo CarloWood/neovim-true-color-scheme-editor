@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
   QStringList args = QCoreApplication::arguments();
   if (args.count() != 2)
   {
-    std::cerr << "Usage: " << args.at(0).toUtf8().constData() << " <syntax group>" << std::endl;
+    std::cerr << "Usage: " << args.at(0).toUtf8().constData() << " <file>.css:<line>" << std::endl;
     return 1;
   }
 
