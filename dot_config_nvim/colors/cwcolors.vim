@@ -101,8 +101,8 @@ hi cConstant            guifg=#607ffc
 hi def link cppConstant         cConstant
 
 " Double quoted strings including the quotes.
-hi cString              guifg=#ece409
-hi cCppString           guifg=#ece409
+hi cString              guifg=#ffa0a0
+hi def link cppString   cString
 
 " A character literal.
 hi cCharacter           guifg=#fcff00
