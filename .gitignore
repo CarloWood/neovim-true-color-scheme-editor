@@ -2,3 +2,4 @@ ColorPicker/Makefile
 ColorPicker/colorpicker
 *.o
 moc_*.cpp
+moc_*.h
