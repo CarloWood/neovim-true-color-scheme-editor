@@ -18,6 +18,10 @@
 " for automatic environment (and commandline history) switching.
 "
 " This vim script then loads it.
-if filereadable($REPOBASE . "-objdir/tags.vim")
+if filereadable($BUILDDIR . "/tags.vim")
+  source $BUILDDIR/tags.vim
+elseif filereadable($REPOBASE . "-objdir/tags.vim")
   source $REPOBASE-objdir/tags.vim
+elseif filereadable($REPOBASE . "/tags.vim")
+  source $REPOBASE/tags.vim
 endif
